@@ -1,0 +1,46 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+  <id>com.github.vitallium.rubylsp</id>
+  <name>Ruby LSP</name>
+  <vendor>vitallium</vendor>
+  <description><![CDATA[
+      <a href="https://shopify.github.io/ruby-lsp/">Ruby LSP</a> for RubyMine to improve rich features.
+      For more information visit the
+      <a href="https://github.com/vitallium/intellij-plugin-ruby-lsp">project site</a>.
+      ]]></description>
+
+  <change-notes><![CDATA[
+    <h2>New Features</h2>
+    <ul>
+      <li>Initial support for using Ruby LSP</li>
+    </ul>
+    ]]></change-notes>
+
+  <depends>com.intellij.modules.ultimate</depends>
+  <depends>com.intellij.modules.ruby</depends>
+
+  <!-- Extension points defined by the plugin.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+  <extensions defaultExtensionNs="com.intellij">
+    <platform.lsp.serverSupportProvider implementation="com.github.vitallium.rubylsp.lsp.RubyLspServerSupportProvider"/>
+    <notificationGroup id="Ruby LSP" displayType="BALLOON"/>
+    <projectConfigurable parentId="language"
+                         instance="com.github.vitallium.rubylsp.lsp.RubyLspSettingsConfigurable"
+                         displayName="Ruby LSP"
+                         nonDefaultProject="true"/>
+  </extensions>
+  <actions>
+    <group
+      id="com.github.vitallium.rubylsp.lsp.actions-group"
+      text="Ruby LSP"
+      popup="true"
+    >
+      <add-to-group group-id="ToolsMenu"/>
+      <action
+        id="com.github.vitallium.rubylsp.lsp.restart-lsp-action"
+        class="com.github.vitallium.rubylsp.lsp.actions.RestartRubyLspServerAction"
+        text="Restart..."
+      />
+    </group>
+  </actions>
+</idea-plugin>

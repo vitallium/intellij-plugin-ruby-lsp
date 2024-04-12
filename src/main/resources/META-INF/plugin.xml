@@ -1,18 +1,35 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <id>com.github.vitallium.ruyblsp</id>
-    <name>ruyb-lsp</name>
+    <id>com.github.vitallium.rubylsp</id>
+    <name>Ruby LSP</name>
     <vendor>vitallium</vendor>
 
     <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.ultimate</depends>
+    <depends>com.intellij.modules.ruby</depends>
 
-    <resource-bundle>messages.MyBundle</resource-bundle>
-
-    <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.vitallium.ruyblsp.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
-    </extensions>
-
-    <applicationListeners>
-        <listener class="com.github.vitallium.ruyblsp.listeners.MyApplicationActivationListener" topic="com.intellij.openapi.application.ApplicationActivationListener"/>
-    </applicationListeners>
+  <!-- Extension points defined by the plugin.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+  <extensions defaultExtensionNs="com.intellij">
+    <platform.lsp.serverSupportProvider implementation="com.github.vitallium.rubylsp.lsp.RubyLspServerSupportProvider"/>
+    <notificationGroup id="Ruby LSP" displayType="BALLOON"/>
+    <projectConfigurable parentId="language"
+      instance="com.github.vitallium.rubylsp.lsp.RubyLspSettingsConfigurable"
+      displayName="Ruby LSP"
+      nonDefaultProject="true" />
+  </extensions>
+  <actions>
+    <group
+      id="com.github.vitallium.rubylsp.lsp.actions-group"
+      text="Ruby LSP"
+      popup="true"
+    >
+      <add-to-group group-id="ToolsMenu"/>
+      <action
+        id="com.github.vitallium.rubylsp.lsp.restart-lsp-action"
+        class="com.github.vitallium.rubylsp.lsp.actions.RestartRubyLspServerAction"
+        text="Restart..."
+      />
+    </group>
+  </actions>
 </idea-plugin>

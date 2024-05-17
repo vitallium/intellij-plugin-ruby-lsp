@@ -2,45 +2,57 @@
 <idea-plugin>
   <id>com.github.vitallium.rubylsp</id>
   <name>Ruby LSP</name>
-  <vendor>vitallium</vendor>
+  <vendor email="vitaliy.slobodin@gmail.com" url="https://github.com/vitallium/intellij-plugin-ruby-lsp">vitallium</vendor>
   <description><![CDATA[
       <a href="https://shopify.github.io/ruby-lsp/">Ruby LSP</a> for RubyMine to improve rich features.
       For more information visit the
       <a href="https://github.com/vitallium/intellij-plugin-ruby-lsp">project site</a>.
       ]]></description>
+  <resource-bundle>messages.RubyLspBundle</resource-bundle>
 
   <change-notes><![CDATA[
     <h2>New Features</h2>
     <ul>
-      <li>Initial support for using Ruby LSP</li>
+      <li>Ruby LSP features are configurable now</li>
+      <li>Add setting to toggle experimental Ruby LSP features</li>
+      <li>Added notifications when Ruby LSP server is stopped or restarted</li>
+    </ul>
+
+    <h2>Bug Fixes</h2>
+    <ul>
+      <li>Fixed the `experimental` command line param for Ruby LSP</li>
+      <li>Fixed plugin icon</li>
     </ul>
     ]]></change-notes>
 
+  <depends>com.intellij.modules.platform</depends>
   <depends>com.intellij.modules.ultimate</depends>
   <depends>com.intellij.modules.ruby</depends>
 
   <!-- Extension points defined by the plugin.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
   <extensions defaultExtensionNs="com.intellij">
-    <platform.lsp.serverSupportProvider implementation="com.github.vitallium.rubylsp.lsp.RubyLspServerSupportProvider"/>
-    <notificationGroup id="Ruby LSP" displayType="BALLOON"/>
-    <projectConfigurable parentId="language"
-                         instance="com.github.vitallium.rubylsp.lsp.RubyLspSettingsConfigurable"
-                         displayName="Ruby LSP"
-                         nonDefaultProject="true"/>
+    <!-- LSP -->
+    <platform.lsp.serverSupportProvider implementation="com.github.vitallium.rubylsp.RubyLspServerSupportProvider"/>
+
+    <!-- Misc -->
+    <notificationGroup id="RubyLsp" displayType="BALLOON"/>
+
+    <!-- Settings -->
+    <projectConfigurable groupId="language" id="rubyLsp.settings"
+                         bundle="messages.RubyLspBundle" key="settings.display.name"
+                         nonDefaultProject="false"
+                         instance="com.github.vitallium.rubylsp.settings.RubyLspSettingsConfigurable"/>/>
   </extensions>
   <actions>
-    <group
-      id="com.github.vitallium.rubylsp.lsp.actions-group"
-      text="Ruby LSP"
-      popup="true"
-    >
-      <add-to-group group-id="ToolsMenu"/>
       <action
-        id="com.github.vitallium.rubylsp.lsp.restart-lsp-action"
-        class="com.github.vitallium.rubylsp.lsp.actions.RestartRubyLspServerAction"
-        text="Restart..."
-      />
-    </group>
+        id="RubyLsp.RestartLspAction"
+        class="com.github.vitallium.rubylsp.actions.RestartRubyLspServerAction"
+        text="Restart Ruby LSP"
+        description="Restart Ruby LSP server"
+        icon="AllIcons.Actions.Restart"
+      >
+      <add-to-group group-id="ToolsMenu" anchor="last"/>
+      </action>
   </actions>
 </idea-plugin>

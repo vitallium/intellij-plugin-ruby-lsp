@@ -1,6 +1,6 @@
-package com.github.vitallium.rubylsp.lsp.actions
+package com.github.vitallium.rubylsp.actions
 
-import com.github.vitallium.rubylsp.lsp.RubyLspServerSupportProvider
+import com.github.vitallium.rubylsp.RubyLspServerSupportProvider
 import com.intellij.notification.NotificationGroupManager
 import com.intellij.notification.NotificationType
 import com.intellij.openapi.actionSystem.ActionUpdateThread

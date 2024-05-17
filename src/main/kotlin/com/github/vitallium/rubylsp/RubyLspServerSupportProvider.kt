@@ -1,4 +1,4 @@
-package com.github.vitallium.rubylsp.lsp
+package com.github.vitallium.rubylsp
 
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.vfs.VirtualFile

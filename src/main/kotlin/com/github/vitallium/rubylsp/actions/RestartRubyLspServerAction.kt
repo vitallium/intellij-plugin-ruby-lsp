@@ -1,11 +1,11 @@
 package com.github.vitallium.rubylsp.actions
 
 import com.github.vitallium.rubylsp.RubyLspServerSupportProvider
-import com.intellij.notification.NotificationGroupManager
-import com.intellij.notification.NotificationType
+import com.github.vitallium.rubylsp.services.RubyLspServerService
 import com.intellij.openapi.actionSystem.ActionUpdateThread
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
+import com.intellij.openapi.components.service
 import com.intellij.platform.lsp.api.LspServerManager
 
 @Suppress("UnstableApiUsage")
@@ -14,12 +14,8 @@ class RestartRubyLspServerAction : AnAction() {
         val project = e.project
         if (project == null || project.isDefault) return
 
-        LspServerManager.getInstance(project).stopAndRestartIfNeeded(RubyLspServerSupportProvider::class.java)
-
-        NotificationGroupManager.getInstance()
-            .getNotificationGroup("Ruby LSP")
-            .createNotification("Ruby LSP Restarted", "", NotificationType.INFORMATION)
-            .notify(project)
+        val rubyLspServerService = project.service<RubyLspServerService>()
+        rubyLspServerService.restartServer()
     }
 
     override fun update(e: AnActionEvent) {

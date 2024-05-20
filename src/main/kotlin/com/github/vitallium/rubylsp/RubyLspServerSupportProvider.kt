@@ -23,5 +23,6 @@ class RubyLspServerSupportProvider : LspServerSupportProvider {
 
     override fun createLspServerWidgetItem(lspServer: LspServer, currentFile: VirtualFile?) = LspServerWidgetItem(
         lspServer, currentFile,
-        RubyLspIcons.StatusWidgetIcon, RubyLspSettingsConfigurable::class.java)
+        RubyLspIcons.StatusWidgetIcon, RubyLspSettingsConfigurable::class.java
+    )
 }

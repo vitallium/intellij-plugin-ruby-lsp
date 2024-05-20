@@ -20,7 +20,7 @@ class RubyLspSettingsStateComponent : PersistentStateComponent<RubyLspSettingsSt
     }
 
     override fun loadState(state: RubyLspSettingsStateComponent) {
-        XmlSerializerUtil.copyBean(state, this);
+        XmlSerializerUtil.copyBean(state, this)
     }
 
     companion object {

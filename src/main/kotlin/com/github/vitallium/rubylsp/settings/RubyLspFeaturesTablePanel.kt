@@ -102,7 +102,7 @@ internal class NewFeatureDialogWrapper : DialogWrapper(true) {
 
     override fun createCenterPanel(): JComponent {
         val panel = JPanel(BorderLayout())
-        val label =RubyLspBundle.message("settings.enabledFeatures.table.add.dialog.label")
+        val label = RubyLspBundle.message("settings.enabledFeatures.table.add.dialog.label")
         panel.add(FormBuilder().addLabeledComponent(label, input, 1, true).panel)
         return panel
     }

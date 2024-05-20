@@ -1,7 +1,6 @@
 package com.github.vitallium.rubylsp.settings
 
 import com.google.gson.annotations.SerializedName
-import java.util.*
 
 data class RubyLspSettings(
     @Transient
@@ -42,10 +41,13 @@ data class RubyLspSettings(
 enum class RubyLspSettingsFormatter {
     @SerializedName("auto")
     AUTO,
+
     @SerializedName("rubocop")
     RUBOCOP,
+
     @SerializedName("syntax_tree")
     SYNTAX_TREE,
+
     @SerializedName("none")
     NONE;
 }

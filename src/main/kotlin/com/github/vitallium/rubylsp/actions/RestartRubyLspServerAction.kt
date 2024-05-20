@@ -27,7 +27,9 @@ class RestartRubyLspServerAction : AnAction() {
         val project = e.project
         if (project == null || project.isDefault) return
 
-        if (LspServerManager.getInstance(project).getServersForProvider(RubyLspServerSupportProvider::class.java).isEmpty()) {
+        if (LspServerManager.getInstance(project).getServersForProvider(RubyLspServerSupportProvider::class.java)
+                .isEmpty()
+        ) {
             e.presentation.isEnabled = false
         } else {
             e.presentation.isEnabled = true

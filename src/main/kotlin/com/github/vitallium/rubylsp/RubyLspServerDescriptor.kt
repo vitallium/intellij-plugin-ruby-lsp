@@ -42,7 +42,11 @@ internal class RubyLspServerDescriptor(
         get() = LspCommunicationChannel.StdIO
 
     override val lspFormattingSupport = object : LspFormattingSupport() {
-        override fun shouldFormatThisFileExclusivelyByServer(file: VirtualFile, ideCanFormatThisFileItself: Boolean, serverExplicitlyWantsToFormatThisFile: Boolean): Boolean {
+        override fun shouldFormatThisFileExclusivelyByServer(
+            file: VirtualFile,
+            ideCanFormatThisFileItself: Boolean,
+            serverExplicitlyWantsToFormatThisFile: Boolean
+        ): Boolean {
             return serverExplicitlyWantsToFormatThisFile && rubyLspSettings.enableExclusiveFormatting
         }
     }
@@ -61,9 +65,12 @@ internal class RubyLspServerDescriptor(
         return ServerProcessHandler.addListeners(processHandler, project)
     }
 
-    override val lspDiagnosticsSupport = LspDiagnosticsSupport().takeIf { rubyLspSettings.enabledFeatures.contains("diagnostics") }
-    override val lspCodeActionsSupport = LspCodeActionsSupport().takeIf { rubyLspSettings.enabledFeatures.contains("codeActions") }
-    override val lspCompletionSupport = LspCompletionSupport().takeIf { rubyLspSettings.enabledFeatures.contains("completion") }
+    override val lspDiagnosticsSupport =
+        LspDiagnosticsSupport().takeIf { rubyLspSettings.enabledFeatures.contains("diagnostics") }
+    override val lspCodeActionsSupport =
+        LspCodeActionsSupport().takeIf { rubyLspSettings.enabledFeatures.contains("codeActions") }
+    override val lspCompletionSupport =
+        LspCompletionSupport().takeIf { rubyLspSettings.enabledFeatures.contains("completion") }
     override val lspGoToDefinitionSupport = rubyLspSettings.enabledFeatures.contains("definition")
     override val lspHoverSupport = rubyLspSettings.enabledFeatures.contains("hover")
 
@@ -74,7 +81,11 @@ internal class RubyLspServerDescriptor(
     companion object {
         private const val GEM_SCRIPT_NAME = "ruby-lsp"
 
-        private fun createGemExecutionContext(project: Project, file: VirtualFile, lspSettings: RubyLspSettings): RubyGemExecutionContext? {
+        private fun createGemExecutionContext(
+            project: Project,
+            file: VirtualFile,
+            lspSettings: RubyLspSettings
+        ): RubyGemExecutionContext? {
             val module = ModuleUtilCore.findModuleForFile(file, project)
             val gemfile = BundlerUtil.getGemfile(module) ?: return null
             if (BundlerGemInfrastructure.hasMissingGems(gemfile)) {
@@ -100,7 +111,8 @@ internal class RubyLspServerDescriptor(
                 return null
             }
 
-            val executionContext = createGemExecutionContext(project, file, rubyLspSettingsState.lspSettings) ?: return null
+            val executionContext =
+                createGemExecutionContext(project, file, rubyLspSettingsState.lspSettings) ?: return null
             return RubyLspServerDescriptor(rubyLspSettingsState.lspSettings, executionContext, project)
         }
     }

@@ -48,7 +48,7 @@ class RubyLspSettingsComponent(private val rubyLspSettings: RubyLspSettings) {
                         .onReset { enabledFeaturesTablePanel.onReset(rubyLspSettings.enabledFeatures) }
                 }
 
-                row{
+                row {
                     checkBox("Experimental features")
                         .bindSelected(rubyLspSettings::experimentalFeaturesEnabled)
                 }

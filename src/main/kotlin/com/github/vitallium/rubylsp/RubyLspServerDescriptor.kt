@@ -28,6 +28,7 @@ internal class RubyLspServerDescriptor(
     project: Project,
 ) : ProjectWideLspServerDescriptor(project, "Ruby LSP") {
     private val logger = Logger.getInstance("RubyLSP")
+
     private val initializationOptions: JsonElement?
 
     init {
@@ -62,7 +63,7 @@ internal class RubyLspServerDescriptor(
             throw RuntimeException("hmm... RubyProcessHandler wasn't an OSProcessHandler.")
         }
 
-        return ServerProcessHandler.addListeners(processHandler, project)
+        return processHandler
     }
 
     override val lspDiagnosticsSupport =
@@ -88,6 +89,7 @@ internal class RubyLspServerDescriptor(
         ): RubyGemExecutionContext? {
             val module = ModuleUtilCore.findModuleForFile(file, project)
             val gemfile = BundlerUtil.getGemfile(module) ?: return null
+
             if (BundlerGemInfrastructure.hasMissingGems(gemfile)) {
                 return null
             }

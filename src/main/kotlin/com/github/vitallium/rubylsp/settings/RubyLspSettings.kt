@@ -7,9 +7,6 @@ data class RubyLspSettings(
     var enabled: Boolean = false,
 
     @Transient
-    var restartLspOnCrash: Boolean = true,
-
-    @Transient
     var enableExclusiveFormatting: Boolean = false,
 
     @Transient

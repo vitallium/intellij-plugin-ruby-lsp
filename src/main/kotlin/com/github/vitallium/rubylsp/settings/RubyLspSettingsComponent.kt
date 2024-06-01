@@ -23,12 +23,6 @@ class RubyLspSettingsComponent(private val rubyLspSettings: RubyLspSettings) {
                         .bindSelected(rubyLspSettings::useExperimentalVersion)
                 }
 
-                row {
-                    checkBox("Restart Ruby LSP on crash")
-                        .enabledIf(enableRubyLspCheckBox.selected)
-                        .bindSelected(rubyLspSettings::restartLspOnCrash)
-                }
-
                 row("Formatter") {
                     comboBox(RubyLspSettingsFormatter.entries)
                         .bindItem(rubyLspSettings::formatter.toNullableProperty())

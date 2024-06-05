@@ -9,7 +9,6 @@ import com.intellij.openapi.diagnostic.Logger
 import com.intellij.openapi.module.ModuleUtilCore
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.vfs.VirtualFile
-import com.intellij.platform.lsp.api.LspCommunicationChannel
 import com.intellij.platform.lsp.api.ProjectWideLspServerDescriptor
 import com.intellij.platform.lsp.api.customization.LspCodeActionsSupport
 import com.intellij.platform.lsp.api.customization.LspCompletionSupport
@@ -38,9 +37,6 @@ internal class RubyLspServerDescriptor(
     override fun isSupportedFile(file: VirtualFile): Boolean {
         return file.fileType == RubyFileType.RUBY
     }
-
-    override val lspCommunicationChannel: LspCommunicationChannel
-        get() = LspCommunicationChannel.StdIO
 
     override val lspFormattingSupport = object : LspFormattingSupport() {
         override fun shouldFormatThisFileExclusivelyByServer(

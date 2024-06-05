@@ -11,17 +11,11 @@
   <resource-bundle>messages.RubyLspBundle</resource-bundle>
 
   <change-notes><![CDATA[
-    <h2>New Features</h2>
+    <h2>Changes</h2>
     <ul>
-      <li>Ruby LSP features are configurable now</li>
-      <li>Add setting to toggle experimental Ruby LSP features</li>
-      <li>Added notifications when Ruby LSP server is stopped or restarted</li>
-    </ul>
-
-    <h2>Bug Fixes</h2>
-    <ul>
-      <li>Fixed the `experimental` command line param for Ruby LSP</li>
-      <li>Fixed plugin icon</li>
+      <li>Removed "Restart Ruby LSP Server" action from the "Tools" menu</li>
+      <li>Removed excessive notifications when Ruby LSP server restarts</li>
+      <li>Removed option for restarting Ruby LSP on crash</li>
     </ul>
     ]]></change-notes>
 

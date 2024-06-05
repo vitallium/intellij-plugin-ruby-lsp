@@ -49,7 +49,7 @@ internal class RubyLspServerDescriptor(
     }
 
     override fun createInitializationOptions(): JsonElement? {
-        logger.info(initializationOptions.toString())
+        logger.debug(initializationOptions.toString())
         return initializationOptions
     }
 

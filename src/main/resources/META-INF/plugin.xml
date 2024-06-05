@@ -44,15 +44,4 @@
                          nonDefaultProject="false"
                          instance="com.github.vitallium.rubylsp.settings.RubyLspSettingsConfigurable"/>/>
   </extensions>
-  <actions>
-      <action
-        id="RubyLsp.RestartLspAction"
-        class="com.github.vitallium.rubylsp.actions.RestartRubyLspServerAction"
-        text="Restart Ruby LSP"
-        description="Restart Ruby LSP server"
-        icon="AllIcons.Actions.Restart"
-      >
-      <add-to-group group-id="ToolsMenu" anchor="last"/>
-      </action>
-  </actions>
 </idea-plugin>

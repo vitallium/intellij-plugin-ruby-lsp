@@ -3,6 +3,7 @@ package com.github.vitallium.rubylsp.settings
 import com.github.vitallium.rubylsp.RubyLspBundle
 import com.intellij.openapi.ui.DialogWrapper
 import com.intellij.openapi.ui.MessageDialogBuilder
+import com.intellij.openapi.ui.ValidationInfo
 import com.intellij.ui.ToolbarDecorator
 import com.intellij.ui.components.JBTextField
 import com.intellij.ui.table.TableView
@@ -54,7 +55,7 @@ internal class RubyLspFeaturesTablePanel {
     }
 
     private fun addData() {
-        val newFeatureDialog = NewFeatureDialogWrapper()
+        val newFeatureDialog = NewFeatureDialogWrapper(this.model.items)
         if (newFeatureDialog.showAndGet()) {
             val featureName = newFeatureDialog.inputData
             model.addRow(featureName)
@@ -89,11 +90,12 @@ internal class RubyLspFeatureColumnInfo : ColumnInfo<String, String>(null) {
     }
 }
 
-
-internal class NewFeatureDialogWrapper : DialogWrapper(true) {
-    private val input = JBTextField("")
+internal class NewFeatureDialogWrapper(
+    private val enabledFeatures: List<String?>
+) : DialogWrapper(true) {
+    private val featureName = JBTextField("")
     val inputData: String
-        get() = input.text
+        get() = featureName.text
 
     init {
         init()
@@ -103,7 +105,19 @@ internal class NewFeatureDialogWrapper : DialogWrapper(true) {
     override fun createCenterPanel(): JComponent {
         val panel = JPanel(BorderLayout())
         val label = RubyLspBundle.message("settings.enabledFeatures.table.add.dialog.label")
-        panel.add(FormBuilder().addLabeledComponent(label, input, 1, true).panel)
+        panel.add(FormBuilder().addLabeledComponent(label, featureName, 1, true).panel)
         return panel
+    }
+
+    override fun doValidate(): ValidationInfo? {
+        if (!rubyLspDefaultFeatures.contains(featureName.text))  {
+          return ValidationInfo(RubyLspBundle.message("settings.enabledFeatures.table.add.dialog.featureName.unknown"), featureName)
+        }
+
+        if (enabledFeatures.contains(featureName.text)) {
+            return ValidationInfo(RubyLspBundle.message("settings.enabledFeatures.table.add.dialog.featureName.exists"), featureName)
+        }
+
+        return null
     }
 }

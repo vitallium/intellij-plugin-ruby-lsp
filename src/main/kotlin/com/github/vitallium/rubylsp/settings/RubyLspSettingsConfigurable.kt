@@ -23,7 +23,7 @@ class RubyLspSettingsConfigurable(private val project: Project) : Configurable, 
     }
 
     override fun isModified(): Boolean {
-        return settingsComponent?.getPanel()?.isModified() ?: false
+        return settingsComponent?.getPanel()?.isModified()!!
     }
 
     override fun apply() {

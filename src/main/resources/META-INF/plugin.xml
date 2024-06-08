@@ -10,15 +10,6 @@
       ]]></description>
   <resource-bundle>messages.RubyLspBundle</resource-bundle>
 
-  <change-notes><![CDATA[
-    <h2>Changes</h2>
-    <ul>
-      <li>Removed "Restart Ruby LSP Server" action from the "Tools" menu</li>
-      <li>Removed excessive notifications when Ruby LSP server restarts</li>
-      <li>Removed option for restarting Ruby LSP on crash</li>
-    </ul>
-    ]]></change-notes>
-
   <depends>com.intellij.modules.platform</depends>
   <depends>com.intellij.modules.ultimate</depends>
   <depends>com.intellij.modules.ruby</depends>

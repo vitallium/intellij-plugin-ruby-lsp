@@ -1,6 +1,5 @@
 import org.jetbrains.changelog.Changelog
 import org.jetbrains.changelog.markdownToHTML
-import org.jetbrains.changelog.ChangelogSectionUrlBuilder
 import org.jetbrains.changelog.date
 
 fun properties(key: String) = providers.gradleProperty(key)

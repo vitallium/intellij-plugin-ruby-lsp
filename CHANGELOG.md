@@ -4,21 +4,27 @@
 
 ### Added
 
-- A dialog for adding a new feature now validates whether the entered feature name is valid and the feature name does not already exist in the enabled list
-
 ### Changed
 
 ### Deprecated
 
 ### Removed
 
-- Action "Restart Ruby LSP Server" from the "Tools" menu
-- Excessive notifications when Ruby LSP server restarts
-- Configuration setting for restarting Ruby LSP on crash
-
 ### Fixed
 
 ### Security
+
+## [[0.0.3]] - 2024-06-08
+
+### Added
+
+- A dialog for adding a new feature now validates whether the entered feature name is valid and the feature name does not already exist in the enabled list
+
+### Removed
+
+- Action "Restart Ruby LSP Server" from the "Tools" menu
+- Excessive notifications when Ruby LSP server restarts
+- Configuration setting for restarting Ruby LSP on crash
 
 ## [0.0.2] - 2024-05-17
 

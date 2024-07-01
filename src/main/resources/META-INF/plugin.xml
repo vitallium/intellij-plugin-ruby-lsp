@@ -10,7 +10,6 @@
       ]]></description>
   <resource-bundle>messages.RubyLspBundle</resource-bundle>
 
-  <depends>com.intellij.modules.platform</depends>
   <depends>com.intellij.modules.ultimate</depends>
   <depends>com.intellij.modules.ruby</depends>
 

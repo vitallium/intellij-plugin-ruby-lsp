@@ -17,6 +17,7 @@
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
   <extensions defaultExtensionNs="com.intellij">
     <!-- LSP -->
+    <!--suppress PluginXmlValidity -->
     <platform.lsp.serverSupportProvider implementation="com.github.vitallium.rubylsp.RubyLspServerSupportProvider"/>
 
     <!-- Misc -->

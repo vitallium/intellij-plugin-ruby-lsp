@@ -6,6 +6,8 @@
 
 ### Changed
 
+- Dependencies - downgrade `org.jetbrains.kotlin.jvm` to `1.9.24`
+
 ### Deprecated
 
 ### Removed

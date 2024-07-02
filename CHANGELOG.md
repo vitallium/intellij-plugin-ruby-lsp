@@ -7,6 +7,7 @@
 ### Changed
 
 - Dependencies - downgrade `org.jetbrains.kotlin.jvm` to `1.9.24`
+- Upgrade Gradle Wrapper to `8.8`
 
 ### Deprecated
 

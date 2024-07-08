@@ -1,6 +1,6 @@
 # Ruby LSP support for RubyMine
 
-![Build](https://github.com/vitallium/ruby-lsp/workflows/Build/badge.svg)
+![Build](https://github.com/vitallium/intellij-plugin-ruby-lsp/workflows/Build/badge.svg)
 [![Version](https://img.shields.io/jetbrains/plugin/v/com.github.vitallium.rubylsp.svg)](https://plugins.jetbrains.com/plugin/com.github.vitallium.rubylsp)
 [![Downloads](https://img.shields.io/jetbrains/plugin/d/com.github.vitallium.rubylsp.svg)](https://plugins.jetbrains.com/plugin/com.github.vitallium.rubylsp)
 

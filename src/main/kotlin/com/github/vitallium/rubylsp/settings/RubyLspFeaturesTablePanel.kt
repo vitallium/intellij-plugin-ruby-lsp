@@ -63,14 +63,7 @@ internal class RubyLspFeaturesTablePanel {
     }
 
     private fun removeData() {
-        val dialog = MessageDialogBuilder.okCancel(
-            RubyLspBundle.message("settings.enabledFeatures.table.remove.dialog.title"),
-            RubyLspBundle.message("settings.enabledFeatures.table.remove.dialog.message")
-        )
-
-        if (dialog.guessWindowAndAsk()) {
-            model.removeRow(table.selectedRow)
-        }
+        model.removeRow(table.selectedRow)
     }
 }
 

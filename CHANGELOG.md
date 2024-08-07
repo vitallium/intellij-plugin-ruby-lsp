@@ -9,6 +9,7 @@
 - Dependencies - downgrade `org.jetbrains.kotlin.jvm` to `1.9.24`
 - Upgrade Gradle Wrapper to `8.8`
 - Dependencies - upgrade `org.jetbrains.kotlinx.kover` to `0.8.1`
+- Removed the confirmation of disabling a Ruby LSP feature
 
 ### Deprecated
 

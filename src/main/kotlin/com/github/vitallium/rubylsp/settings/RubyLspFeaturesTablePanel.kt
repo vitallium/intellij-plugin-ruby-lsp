@@ -2,7 +2,6 @@ package com.github.vitallium.rubylsp.settings
 
 import com.github.vitallium.rubylsp.RubyLspBundle
 import com.intellij.openapi.ui.DialogWrapper
-import com.intellij.openapi.ui.MessageDialogBuilder
 import com.intellij.openapi.ui.ValidationInfo
 import com.intellij.ui.ToolbarDecorator
 import com.intellij.ui.components.JBTextField

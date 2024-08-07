@@ -39,11 +39,11 @@ class RubyLspSettingsComponent(private val rubyLspSettings: RubyLspSettings) {
                         .label("Features:", LabelPosition.TOP)
                         .onIsModified { enabledFeaturesTablePanel.onModified(rubyLspSettings.enabledFeatures) }
                         .onApply { enabledFeaturesTablePanel.onApply(rubyLspSettings.enabledFeatures) }
-                        .onReset { enabledFeaturesTablePanel.onReset(rubyLspSettings.enabledFeatures) }
+                        .onReset { enabledFeaturesTablePanel.onReset(rubyLspDefaultFeatures.toMutableSet()) }
                 }
 
                 row {
-                    checkBox("Experimental features")
+                    checkBox("Enable experimental features")
                         .bindSelected(rubyLspSettings::experimentalFeaturesEnabled)
                 }
             }

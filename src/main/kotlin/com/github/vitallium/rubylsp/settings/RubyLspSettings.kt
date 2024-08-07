@@ -34,6 +34,9 @@ data class RubyLspSettings(
     @Transient
     var useExperimentalVersion: Boolean = false,
 
+    @Transient
+    var useBundler: Boolean = false,
+
     var formatter: RubyLspSettingsFormatter = RubyLspSettingsFormatter.AUTO,
     var experimentalFeaturesEnabled: Boolean = false,
     var enabledFeatures: MutableSet<String> = rubyLspDefaultFeatures.toMutableSet()

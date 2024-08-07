@@ -27,6 +27,12 @@ class RubyLspSettingsComponent(private val rubyLspSettings: RubyLspSettings) {
                     comboBox(RubyLspSettingsFormatter.entries)
                         .bindItem(rubyLspSettings::formatter.toNullableProperty())
                 }
+
+                row {
+                    checkBox("Use bundler")
+                        .enabledIf(enableRubyLspCheckBox.selected)
+                        .bindSelected(rubyLspSettings::useBundler)
+                }
             }
 
             group("Enabled Features") {

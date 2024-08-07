@@ -12,6 +12,7 @@
 - Removed the confirmation of disabling a Ruby LSP feature
 - Added support for resetting Ruby LSP features to default (https://github.com/vitallium/intellij-plugin-ruby-lsp/issues/20)
 - Added "typeHierarchy" feature to the list of default features
+- Added support for running Ruby LSP via "bundler"
 
 ### Deprecated
 

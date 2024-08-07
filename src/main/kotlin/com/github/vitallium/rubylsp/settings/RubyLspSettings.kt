@@ -2,24 +2,26 @@ package com.github.vitallium.rubylsp.settings
 
 import com.google.gson.annotations.SerializedName
 
+// For the list of available features, see https://github.com/Shopify/ruby-lsp/blob/main/lib/ruby_lsp/server.rb#L150
 val rubyLspDefaultFeatures = setOf(
-"codeActions",
-"codeLens",
-"completion",
-"definition",
-"diagnostics",
-"documentHighlights",
-"documentLink",
-"documentSymbols",
-"foldingRanges",
-"formatting",
-"hover",
-"inlayHint",
-"onTypeFormatting",
-"selectionRanges",
-"semanticHighlighting",
-"signatureHelp",
-"workspaceSymbol",
+    "codeActions",
+    "codeLens",
+    "completion",
+    "definition",
+    "diagnostics",
+    "documentHighlights",
+    "documentLink",
+    "documentSymbols",
+    "foldingRanges",
+    "formatting",
+    "hover",
+    "inlayHint",
+    "onTypeFormatting",
+    "selectionRanges",
+    "semanticHighlighting",
+    "signatureHelp",
+    "typeHierarchy",
+    "workspaceSymbol",
 )
 
 data class RubyLspSettings(

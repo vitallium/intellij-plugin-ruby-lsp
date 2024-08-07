@@ -102,12 +102,18 @@ internal class NewFeatureDialogWrapper(
     }
 
     override fun doValidate(): ValidationInfo? {
-        if (!rubyLspDefaultFeatures.contains(featureName.text))  {
-          return ValidationInfo(RubyLspBundle.message("settings.enabledFeatures.table.add.dialog.featureName.unknown"), featureName)
+        if (!rubyLspDefaultFeatures.contains(featureName.text)) {
+            return ValidationInfo(
+                RubyLspBundle.message("settings.enabledFeatures.table.add.dialog.featureName.unknown"),
+                featureName
+            )
         }
 
         if (enabledFeatures.contains(featureName.text)) {
-            return ValidationInfo(RubyLspBundle.message("settings.enabledFeatures.table.add.dialog.featureName.exists"), featureName)
+            return ValidationInfo(
+                RubyLspBundle.message("settings.enabledFeatures.table.add.dialog.featureName.exists"),
+                featureName
+            )
         }
 
         return null

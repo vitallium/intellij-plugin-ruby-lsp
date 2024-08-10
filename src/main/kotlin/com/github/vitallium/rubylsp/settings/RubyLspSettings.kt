@@ -52,6 +52,9 @@ enum class RubyLspSettingsFormatter {
     @SerializedName("syntax_tree")
     SYNTAX_TREE,
 
+    @SerializedName("standard")
+    STANDARD,
+
     @SerializedName("none")
     NONE;
 }

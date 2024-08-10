@@ -4,6 +4,8 @@
 
 ### Added
 
+- Support for "standardrb" formatter
+
 ### Changed
 
 ### Deprecated

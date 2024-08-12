@@ -15,6 +15,8 @@
 
 ### Fixed
 
+- Fixed generation of change notes
+
 ### Security
 
 ## [[0.0.4]] - 2024-08-08

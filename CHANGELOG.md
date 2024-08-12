@@ -5,6 +5,7 @@
 ### Added
 
 - Support for "standardrb" formatter
+- Add support for 2024.x versions
 
 ### Changed
 

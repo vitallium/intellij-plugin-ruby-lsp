@@ -2,7 +2,7 @@
 <idea-plugin>
   <id>com.github.vitallium.rubylsp</id>
   <name>Ruby LSP</name>
-  <vendor email="vitaliy.slobodin@gmail.com" url="https://github.com/vitallium/intellij-plugin-ruby-lsp">vitallium</vendor>
+  <vendor email="vitaliy.slobodin@gmail.com" url="https://github.com/vitallium/intellij-plugin-ruby-lsp">Vitaly Slobodin</vendor>
   <description><![CDATA[
       <a href="https://shopify.github.io/ruby-lsp/">Ruby LSP</a> for RubyMine to improve rich features.
       For more information visit the

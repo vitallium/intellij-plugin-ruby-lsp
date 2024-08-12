@@ -4,9 +4,6 @@
 
 ### Added
 
-- Support for "standardrb" formatter
-- Add support for 2024.x versions
-
 ### Changed
 
 ### Deprecated
@@ -15,9 +12,18 @@
 
 ### Fixed
 
-- Fixed generation of change notes
-
 ### Security
+
+## [[0.0.5]] - 2024-08-12
+
+### Added
+
+- Support for "standardrb" formatter
+- Add support for 2024.x versions
+
+### Fixed
+
+- Fixed generation of change notes
 
 ## [[0.0.4]] - 2024-08-08
 
@@ -62,7 +68,8 @@
 
 - Initial scaffold created from [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template)
 
-[[Unreleased]]: https://github.com/vitallium/intellij-plugin-ruby-lsp/compare/v0.0.4...HEAD
+[[Unreleased]]: https://github.com/vitallium/intellij-plugin-ruby-lsp/compare/v0.0.5...HEAD
+[0.0.5]: https://github.com/vitallium/intellij-plugin-ruby-lsp/compare/v0.0.4...v0.0.5
 [0.0.4]: https://github.com/vitallium/intellij-plugin-ruby-lsp/compare/v0.0.3...v0.0.4
 [0.0.3]: https://github.com/vitallium/intellij-plugin-ruby-lsp/compare/v0.0.2...v0.0.3
 [0.0.2]: https://github.com/vitallium/intellij-plugin-ruby-lsp/compare/v0.0.1...v0.0.2

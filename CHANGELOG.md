@@ -1,6 +1,6 @@
 # ruby-lsp Changelog
 
-## [[Unreleased]]
+## [Unreleased]
 
 ### Added
 
@@ -14,7 +14,7 @@
 
 ### Security
 
-## [[0.0.5]] - 2024-08-12
+## [0.0.5] - 2024-08-12
 
 ### Added
 
@@ -25,7 +25,7 @@
 
 - Fixed generation of change notes
 
-## [[0.0.4]] - 2024-08-08
+## [0.0.4] - 2024-08-08
 
 ### Changed
 
@@ -37,7 +37,7 @@
 - Added "typeHierarchy" feature to the list of default features
 - Added support for running Ruby LSP via "bundler"
 
-## [[0.0.3]] - 2024-06-08
+## [0.0.3] - 2024-06-08
 
 ### Added
 
@@ -68,7 +68,7 @@
 
 - Initial scaffold created from [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template)
 
-[[Unreleased]]: https://github.com/vitallium/intellij-plugin-ruby-lsp/compare/v0.0.5...HEAD
+[Unreleased]: https://github.com/vitallium/intellij-plugin-ruby-lsp/compare/v0.0.5...HEAD
 [0.0.5]: https://github.com/vitallium/intellij-plugin-ruby-lsp/compare/v0.0.4...v0.0.5
 [0.0.4]: https://github.com/vitallium/intellij-plugin-ruby-lsp/compare/v0.0.3...v0.0.4
 [0.0.3]: https://github.com/vitallium/intellij-plugin-ruby-lsp/compare/v0.0.2...v0.0.3

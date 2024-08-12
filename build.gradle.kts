@@ -47,7 +47,7 @@ changelog {
   version.set(project.version.toString())
   path.set(file("CHANGELOG.md").canonicalPath)
   repositoryUrl = properties("pluginRepositoryUrl")
-  header.set(provider { "[${version.get()}] - ${date()}" })
+   header.set(provider { "${version.get()} - ${date()}" })
   headerParserRegex.set("""(\d+\.\d+\.\d+)""".toRegex())
   itemPrefix.set("-")
   keepUnreleasedSection.set(true)

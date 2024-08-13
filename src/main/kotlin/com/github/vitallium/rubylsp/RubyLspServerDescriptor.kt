@@ -44,7 +44,7 @@ internal class RubyLspServerDescriptor(
             ideCanFormatThisFileItself: Boolean,
             serverExplicitlyWantsToFormatThisFile: Boolean
         ): Boolean {
-            return serverExplicitlyWantsToFormatThisFile && rubyLspSettings.enableExclusiveFormatting
+            return rubyLspSettings.enableExclusiveFormatting
         }
     }
 

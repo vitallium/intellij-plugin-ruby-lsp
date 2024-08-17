@@ -2,7 +2,7 @@ package com.github.vitallium.rubylsp.settings
 
 import com.google.gson.annotations.SerializedName
 
-// For the list of available features, see https://github.com/Shopify/ruby-lsp/blob/main/lib/ruby_lsp/server.rb#L150
+// For the list of available features, see https://github.com/Shopify/ruby-lsp/blob/main/lib/ruby_lsp/server.rb
 val rubyLspDefaultFeatures = setOf(
     "codeActions",
     "codeLens",
@@ -54,6 +54,9 @@ enum class RubyLspSettingsFormatter {
 
     @SerializedName("standard")
     STANDARD,
+
+    @SerializedName("rubyfmt")
+    RUBYFMT,
 
     @SerializedName("none")
     NONE;

@@ -1,7 +1,10 @@
 package com.github.vitallium.rubylsp.settings
 
+import com.intellij.icons.AllIcons
+import com.intellij.openapi.ui.ComboBox
 import com.intellij.openapi.ui.DialogPanel
 import com.intellij.ui.components.JBCheckBox
+import com.intellij.ui.components.JBLabel
 import com.intellij.ui.dsl.builder.*
 
 class RubyLspSettingsComponent(private val rubyLspSettings: RubyLspSettings) {
@@ -10,6 +13,7 @@ class RubyLspSettingsComponent(private val rubyLspSettings: RubyLspSettings) {
     init {
         panel = panel {
             lateinit var enableRubyLspCheckBox: Cell<JBCheckBox>
+            lateinit var formatterAvailableViaAddonLabel: JBLabel
 
             group("General Settings") {
                 row {
@@ -26,6 +30,23 @@ class RubyLspSettingsComponent(private val rubyLspSettings: RubyLspSettings) {
                 row("Formatter") {
                     comboBox(RubyLspSettingsFormatter.entries)
                         .bindItem(rubyLspSettings::formatter.toNullableProperty())
+                        .applyToComponent {
+                            addActionListener { event ->
+                                val selectedFormatter =
+                                    (event.source as ComboBox<*>).selectedItem as RubyLspSettingsFormatter
+                                formatterAvailableViaAddonLabel.isVisible =
+                                    isStandardOrRubocopFormatterSelected(selectedFormatter)
+                            }
+                        }
+                }
+
+                row {
+                    formatterAvailableViaAddonLabel = JBLabel(AllIcons.General.Warning)
+                    cell(formatterAvailableViaAddonLabel)
+                        .applyToComponent {
+                            isVisible = false
+                            text = "Formatter is available via addon"
+                        }
                 }
 
                 row {
@@ -67,5 +88,10 @@ class RubyLspSettingsComponent(private val rubyLspSettings: RubyLspSettings) {
 
     fun getPanel(): DialogPanel? {
         return panel
+    }
+
+    private fun isStandardOrRubocopFormatterSelected(selectedFormatter: RubyLspSettingsFormatter): Boolean {
+        return selectedFormatter == RubyLspSettingsFormatter.STANDARD ||
+            selectedFormatter == RubyLspSettingsFormatter.RUBYFMT
     }
 }

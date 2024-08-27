@@ -4,6 +4,9 @@
 
 ### Added
 
+- Support for "rubyfmt" formatter
+- Display a warning when a Ruby LSP formatter is available via an addon.
+
 ### Changed
 
 ### Deprecated

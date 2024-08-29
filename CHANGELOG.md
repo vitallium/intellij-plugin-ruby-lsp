@@ -1,11 +1,8 @@
 # ruby-lsp Changelog
 
-## [Unreleased]
+## [[Unreleased]]
 
 ### Added
-
-- Support for "rubyfmt" formatter
-- Display a warning when a Ruby LSP formatter is available via an addon.
 
 ### Changed
 
@@ -16,6 +13,13 @@
 ### Fixed
 
 ### Security
+
+## [0.0.6] - 2024-08-27
+
+### Added
+
+- Support for "rubyfmt" formatter
+- Display a warning when a Ruby LSP formatter is available via an addon.
 
 ## [0.0.5] - 2024-08-12
 
@@ -71,7 +75,8 @@
 
 - Initial scaffold created from [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template)
 
-[Unreleased]: https://github.com/vitallium/intellij-plugin-ruby-lsp/compare/v0.0.5...HEAD
+[[Unreleased]]: https://github.com/vitallium/intellij-plugin-ruby-lsp/compare/v0.0.6...HEAD
+[0.0.6]: https://github.com/vitallium/intellij-plugin-ruby-lsp/compare/v0.0.5...v0.0.6
 [0.0.5]: https://github.com/vitallium/intellij-plugin-ruby-lsp/compare/v0.0.4...v0.0.5
 [0.0.4]: https://github.com/vitallium/intellij-plugin-ruby-lsp/compare/v0.0.3...v0.0.4
 [0.0.3]: https://github.com/vitallium/intellij-plugin-ruby-lsp/compare/v0.0.2...v0.0.3

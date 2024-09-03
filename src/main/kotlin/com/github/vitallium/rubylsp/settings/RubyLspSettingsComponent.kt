@@ -73,6 +73,21 @@ class RubyLspSettingsComponent(private val rubyLspSettings: RubyLspSettings) {
                     checkBox("Enable experimental features")
                         .bindSelected(rubyLspSettings::experimentalFeaturesEnabled)
                 }
+
+            }
+
+            group("Enabled Code Actions") {
+                row {
+                    val enabledCodeActionsTablePanel = RubyLspCodeActionsTablePanel()
+
+                    cell(enabledCodeActionsTablePanel.component)
+                        .comment("List of enabled code actions")
+                        .align(AlignX.FILL)
+                        .label("Code actions:", LabelPosition.TOP)
+                        .onIsModified { enabledCodeActionsTablePanel.onModified(rubyLspSettings.enabledCodeActions) }
+                        .onApply { enabledCodeActionsTablePanel.onApply(rubyLspSettings.enabledCodeActions) }
+                        .onReset { enabledCodeActionsTablePanel.onReset(rubyLspDefaultCodeActions.toMutableSet()) }
+                }
             }
 
             group("Intellij Specific Settings") {

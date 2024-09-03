@@ -4,6 +4,8 @@
 
 ### Added
 
+- Add support for toggling code actions.
+
 ### Changed
 
 ### Deprecated

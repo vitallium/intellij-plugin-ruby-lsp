@@ -16,10 +16,10 @@ import javax.swing.table.DefaultTableCellRenderer
 import javax.swing.table.TableCellRenderer
 
 
-internal class RubyLspFeaturesTablePanel {
+internal class RubyLspCodeActionsTablePanel {
     val component: JComponent
 
-    private val model: ListTableModel<String> = ListTableModel(RubyLspFeatureColumnInfo())
+    private val model: ListTableModel<String> = ListTableModel(RubyLspCodeActionColumnInfo())
     private val table: TableView<String> = TableView(model).apply {
         visibleRowCount = 5
         rowSelectionAllowed = false
@@ -37,27 +37,27 @@ internal class RubyLspFeaturesTablePanel {
         component = toolbarTable
     }
 
-    fun onModified(features: MutableSet<String>): Boolean {
-        return model.items != features
+    fun onModified(codeActions: MutableSet<String>): Boolean {
+        return model.items != codeActions
     }
 
-    fun onApply(features: MutableSet<String>) {
-        features.clear()
+    fun onApply(codeActions: MutableSet<String>) {
+        codeActions.clear()
         model.items.forEach {
-            features.add(it)
+            codeActions.add(it)
         }
     }
 
-    fun onReset(features: MutableSet<String>) {
+    fun onReset(codeActions: MutableSet<String>) {
         repeat(model.items.size) { model.removeRow(0) }
-        model.addRows(features)
+        model.addRows(codeActions)
     }
 
     private fun addData() {
-        val newFeatureDialog = NewFeatureDialogWrapper(this.model.items)
-        if (newFeatureDialog.showAndGet()) {
-            val featureName = newFeatureDialog.inputData
-            model.addRow(featureName)
+        val newCodeActionDialog = NewCodeActionDialogWrapper(this.model.items)
+        if (newCodeActionDialog.showAndGet()) {
+            val codeActionName = newCodeActionDialog.inputData
+            model.addRow(codeActionName)
         }
     }
 
@@ -66,7 +66,7 @@ internal class RubyLspFeaturesTablePanel {
     }
 }
 
-internal class RubyLspFeatureColumnInfo : ColumnInfo<String, String>(null) {
+internal class RubyLspCodeActionColumnInfo : ColumnInfo<String, String>(null) {
     private val renderer = DefaultTableCellRenderer()
 
     override fun valueOf(item: String): String = item
@@ -76,43 +76,43 @@ internal class RubyLspFeatureColumnInfo : ColumnInfo<String, String>(null) {
     override fun getComparator(): java.util.Comparator<String> = COMPARATOR
 
     companion object {
-        private val COMPARATOR = Comparator<String> { featureA, featureB ->
-            featureA.compareTo(featureB, true)
+        private val COMPARATOR = Comparator<String> { codeActionA, codeActionB ->
+            codeActionA.compareTo(codeActionB, true)
         }
     }
 }
 
-internal class NewFeatureDialogWrapper(
-    private val enabledFeatures: List<String?>
+internal class NewCodeActionDialogWrapper(
+    private val enabledCodeActions: List<String?>
 ) : DialogWrapper(true) {
-    private val featureName = JBTextField("")
+    private val codeActionName = JBTextField("")
     val inputData: String
-        get() = featureName.text
+        get() = codeActionName.text
 
     init {
         init()
-        title = RubyLspBundle.message("settings.enabledFeatures.table.add.dialog.title")
+        title = RubyLspBundle.message("settings.enabledCodeActions.table.add.dialog.title")
     }
 
     override fun createCenterPanel(): JComponent {
         val panel = JPanel(BorderLayout())
-        val label = RubyLspBundle.message("settings.enabledFeatures.table.add.dialog.label")
-        panel.add(FormBuilder().addLabeledComponent(label, featureName, 1, true).panel)
+        val label = RubyLspBundle.message("settings.enabledCodeActions.table.add.dialog.label")
+        panel.add(FormBuilder().addLabeledComponent(label, codeActionName, 1, true).panel)
         return panel
     }
 
     override fun doValidate(): ValidationInfo? {
-        if (!rubyLspDefaultFeatures.contains(inputData)) {
+        if (!rubyLspDefaultCodeActions.contains(inputData)) {
             return ValidationInfo(
-                RubyLspBundle.message("settings.enabledFeatures.table.add.dialog.featureName.unknown"),
-                featureName
+                RubyLspBundle.message("settings.enabledCodeActions.table.add.dialog.codeActionName.unknown"),
+                codeActionName
             )
         }
 
-        if (enabledFeatures.contains(inputData)) {
+        if (enabledCodeActions.contains(inputData)) {
             return ValidationInfo(
-                RubyLspBundle.message("settings.enabledFeatures.table.add.dialog.featureName.exists"),
-                featureName
+                RubyLspBundle.message("settings.enabledCodeActions.table.add.dialog.codeActionName.exists"),
+                codeActionName
             )
         }
 

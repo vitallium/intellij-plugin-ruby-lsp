@@ -24,6 +24,16 @@ val rubyLspDefaultFeatures = setOf(
     "workspaceSymbol",
 )
 
+// For the list of available code actions, see https://microsoft.github.io/language-server-protocol/specifications/lsp/3.17/specification/#codeActionKind
+val rubyLspDefaultCodeActions = setOf(
+    "quickfix",
+    "refactor.extract",
+    "refactor.inline",
+    "refactor.rewrite",
+    "source.organizeImports",
+    "source.fixAll"
+)
+
 data class RubyLspSettings(
     @Transient
     var enabled: Boolean = false,
@@ -39,7 +49,8 @@ data class RubyLspSettings(
 
     var formatter: RubyLspSettingsFormatter = RubyLspSettingsFormatter.AUTO,
     var experimentalFeaturesEnabled: Boolean = false,
-    var enabledFeatures: MutableSet<String> = rubyLspDefaultFeatures.toMutableSet()
+    var enabledFeatures: MutableSet<String> = rubyLspDefaultFeatures.toMutableSet(),
+    var enabledCodeActions: MutableSet<String> = rubyLspDefaultCodeActions.toMutableSet()
 )
 
 enum class RubyLspSettingsFormatter {

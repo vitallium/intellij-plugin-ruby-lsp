@@ -10,7 +10,6 @@ import com.intellij.openapi.module.ModuleUtilCore
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.vfs.VirtualFile
 import com.intellij.platform.lsp.api.ProjectWideLspServerDescriptor
-import com.intellij.platform.lsp.api.customization.LspCodeActionsSupport
 import com.intellij.platform.lsp.api.customization.LspCompletionSupport
 import com.intellij.platform.lsp.api.customization.LspDiagnosticsSupport
 import com.intellij.platform.lsp.api.customization.LspFormattingSupport
@@ -65,7 +64,7 @@ internal class RubyLspServerDescriptor(
     override val lspDiagnosticsSupport =
         LspDiagnosticsSupport().takeIf { rubyLspSettings.enabledFeatures.contains("diagnostics") }
     override val lspCodeActionsSupport =
-        LspCodeActionsSupport().takeIf { rubyLspSettings.enabledFeatures.contains("codeActions") }
+        RubyLspCodeActionsSupport(rubyLspSettings).takeIf { rubyLspSettings.enabledFeatures.contains("codeActions") }
     override val lspCompletionSupport =
         LspCompletionSupport().takeIf { rubyLspSettings.enabledFeatures.contains("completion") }
     override val lspGoToDefinitionSupport = rubyLspSettings.enabledFeatures.contains("definition")

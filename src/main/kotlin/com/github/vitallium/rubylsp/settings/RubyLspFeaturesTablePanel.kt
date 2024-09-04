@@ -15,11 +15,10 @@ import javax.swing.JPanel
 import javax.swing.table.DefaultTableCellRenderer
 import javax.swing.table.TableCellRenderer
 
-
-internal class RubyLspFeaturesTablePanel {
+internal class RubyLspFeaturesTablePanel(enabledFeatures: List<String?>) {
     val component: JComponent
 
-    private val model: ListTableModel<String> = ListTableModel(RubyLspFeatureColumnInfo())
+    private val model: ListTableModel<String> = ListTableModel(arrayOf(RubyLspFeatureColumnInfo()), enabledFeatures)
     private val table: TableView<String> = TableView(model).apply {
         visibleRowCount = 5
         rowSelectionAllowed = false
@@ -37,18 +36,16 @@ internal class RubyLspFeaturesTablePanel {
         component = toolbarTable
     }
 
-    fun onModified(features: MutableSet<String>): Boolean {
-        return model.items != features
+    fun onModified(features: Set<String>): Boolean {
+        return model.items.toSet() != features
     }
 
     fun onApply(features: MutableSet<String>) {
         features.clear()
-        model.items.forEach {
-            features.add(it)
-        }
+        features.addAll(model.items)
     }
 
-    fun onReset(features: MutableSet<String>) {
+    fun onReset(features: Set<String>) {
         repeat(model.items.size) { model.removeRow(0) }
         model.addRows(features)
     }
@@ -102,7 +99,7 @@ internal class NewFeatureDialogWrapper(
     }
 
     override fun doValidate(): ValidationInfo? {
-        if (!rubyLspDefaultFeatures.contains(inputData)) {
+        if (!RUBY_LSP_DEFAULT_FEATURES.contains(inputData)) {
             return ValidationInfo(
                 RubyLspBundle.message("settings.enabledFeatures.table.add.dialog.featureName.unknown"),
                 featureName

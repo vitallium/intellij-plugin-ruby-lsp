@@ -24,7 +24,7 @@
     <notificationGroup id="RubyLsp" displayType="BALLOON"/>
 
     <!-- Settings -->
-    <projectConfigurable groupId="language" id="rubyLsp.settings"
+    <projectConfigurable groupId="language" id="rubyLsp"
                          bundle="messages.RubyLspBundle" key="settings.display.name"
                          nonDefaultProject="false"
                          instance="com.github.vitallium.rubylsp.settings.RubyLspSettingsConfigurable"/>/>

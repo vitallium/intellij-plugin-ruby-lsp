@@ -3,7 +3,7 @@ package com.github.vitallium.rubylsp.settings
 import com.google.gson.annotations.SerializedName
 
 // For the list of available features, see https://github.com/Shopify/ruby-lsp/blob/main/lib/ruby_lsp/server.rb
-val rubyLspDefaultFeatures = setOf(
+val RUBY_LSP_DEFAULT_FEATURES = setOf(
     "codeActions",
     "codeLens",
     "completion",
@@ -25,7 +25,7 @@ val rubyLspDefaultFeatures = setOf(
 )
 
 // For the list of available code actions, see https://microsoft.github.io/language-server-protocol/specifications/lsp/3.17/specification/#codeActionKind
-val rubyLspDefaultCodeActions = setOf(
+val RUBY_LSP_DEFAULT_CODE_ACTIONS = setOf(
     "quickfix",
     "refactor.extract",
     "refactor.inline",
@@ -49,8 +49,8 @@ data class RubyLspSettings(
 
     var formatter: RubyLspSettingsFormatter = RubyLspSettingsFormatter.AUTO,
     var experimentalFeaturesEnabled: Boolean = false,
-    var enabledFeatures: MutableSet<String> = rubyLspDefaultFeatures.toMutableSet(),
-    var enabledCodeActions: MutableSet<String> = rubyLspDefaultCodeActions.toMutableSet()
+    var enabledFeatures: MutableSet<String> = RUBY_LSP_DEFAULT_FEATURES.toMutableSet(),
+    var enabledCodeActions: MutableSet<String> = RUBY_LSP_DEFAULT_CODE_ACTIONS.toMutableSet()
 )
 
 enum class RubyLspSettingsFormatter {

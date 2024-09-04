@@ -97,7 +97,11 @@ internal class RubyLspServerDescriptor(
 
             val moduleForRunningLsp = if (lspSettings.useBundler) module else null
 
-            return RubyGemExecutionContext.tryCreate(RubySdkUtil.getFileSdk(project, file), moduleForRunningLsp, GEM_SCRIPT_NAME)
+            return RubyGemExecutionContext.tryCreate(
+                RubySdkUtil.getFileSdk(project, file),
+                moduleForRunningLsp,
+                GEM_SCRIPT_NAME
+            )
                 ?.withWorkingDir(gemfile.parent)
                 ?.withGemScriptName(GEM_SCRIPT_NAME)
                 ?.withArguments(gemScriptArgsBuilder)

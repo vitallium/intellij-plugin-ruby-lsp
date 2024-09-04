@@ -15,11 +15,11 @@ import javax.swing.JPanel
 import javax.swing.table.DefaultTableCellRenderer
 import javax.swing.table.TableCellRenderer
 
-
-internal class RubyLspCodeActionsTablePanel {
+internal class RubyLspCodeActionsTablePanel(enabledCodeActions: List<String>) {
     val component: JComponent
 
-    private val model: ListTableModel<String> = ListTableModel(RubyLspCodeActionColumnInfo())
+    private val model: ListTableModel<String> =
+        ListTableModel(arrayOf(RubyLspCodeActionColumnInfo()), enabledCodeActions)
     private val table: TableView<String> = TableView(model).apply {
         visibleRowCount = 5
         rowSelectionAllowed = false
@@ -37,8 +37,8 @@ internal class RubyLspCodeActionsTablePanel {
         component = toolbarTable
     }
 
-    fun onModified(codeActions: MutableSet<String>): Boolean {
-        return model.items != codeActions
+    fun onModified(codeActions: Set<String>): Boolean {
+        return model.items.toSet() != codeActions
     }
 
     fun onApply(codeActions: MutableSet<String>) {
@@ -102,7 +102,7 @@ internal class NewCodeActionDialogWrapper(
     }
 
     override fun doValidate(): ValidationInfo? {
-        if (!rubyLspDefaultCodeActions.contains(inputData)) {
+        if (!RUBY_LSP_DEFAULT_CODE_ACTIONS.contains(inputData)) {
             return ValidationInfo(
                 RubyLspBundle.message("settings.enabledCodeActions.table.add.dialog.codeActionName.unknown"),
                 codeActionName

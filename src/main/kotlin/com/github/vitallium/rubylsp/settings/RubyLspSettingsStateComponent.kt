@@ -12,15 +12,15 @@ import com.intellij.util.xmlb.XmlSerializerUtil
     name = "RubyLspState",
     storages = [Storage("ruby-lsp.xml")]
 )
-class RubyLspSettingsStateComponent : PersistentStateComponent<RubyLspSettingsStateComponent> {
+class RubyLspSettingsStateComponent : PersistentStateComponent<RubyLspSettings> {
     var lspSettings: RubyLspSettings = RubyLspSettings()
 
-    override fun getState(): RubyLspSettingsStateComponent {
-        return this
+    override fun getState(): RubyLspSettings {
+        return lspSettings
     }
 
-    override fun loadState(state: RubyLspSettingsStateComponent) {
-        XmlSerializerUtil.copyBean(state, this)
+    override fun loadState(state: RubyLspSettings) {
+        XmlSerializerUtil.copyBean(state, this.lspSettings)
     }
 
     companion object {

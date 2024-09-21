@@ -1,6 +1,9 @@
 package com.github.vitallium.rubylsp.settings
 
 import com.github.vitallium.rubylsp.RubyLspBundle
+import com.intellij.icons.AllIcons
+import com.intellij.openapi.actionSystem.AnAction
+import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.ui.DialogWrapper
 import com.intellij.openapi.ui.ValidationInfo
 import com.intellij.ui.ToolbarDecorator
@@ -30,6 +33,15 @@ internal class RubyLspFeaturesTablePanel(enabledFeatures: List<String?>) {
         val toolbarTable = ToolbarDecorator.createDecorator(table)
             .setAddAction { addData() }
             .setRemoveAction { removeData() }
+            .addExtraAction(object : AnAction(
+                RubyLspBundle.message("settings.enabledFeatures.table.action.reset"),
+                RubyLspBundle.message("settings.enabledFeatures.table.action.reset.description"),
+                AllIcons.General.Reset
+            ) {
+                override fun actionPerformed(e: AnActionEvent) {
+                    onReset(RUBY_LSP_DEFAULT_FEATURES.toMutableSet())
+                }
+            })
             .disableUpDownActions()
             .createPanel()
 

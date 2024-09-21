@@ -12,6 +12,8 @@
 
 ### Fixed
 
+- Fixed resetting of features and code actions
+
 ### Security
 
 ## [0.0.7] - 2024-09-03

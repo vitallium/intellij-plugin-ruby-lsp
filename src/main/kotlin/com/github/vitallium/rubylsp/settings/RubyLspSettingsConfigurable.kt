@@ -75,13 +75,13 @@ class RubyLspSettingsConfigurable(private val project: Project) : BoundSearchabl
                             .label("Features:", LabelPosition.TOP)
                             .onIsModified { enabledFeaturesTablePanel.onModified(rubyLspSettings.enabledFeatures) }
                             .onApply { enabledFeaturesTablePanel.onApply(rubyLspSettings.enabledFeatures) }
+                            .onReset { enabledFeaturesTablePanel.onReset(rubyLspSettings.enabledFeatures) }
                     }
 
                     row {
                         checkBox("Enable experimental features")
                             .bindSelected(rubyLspSettings::experimentalFeaturesEnabled)
                     }
-
                 }
 
                 group("Enabled Code Actions") {
@@ -95,7 +95,7 @@ class RubyLspSettingsConfigurable(private val project: Project) : BoundSearchabl
                             .label("Code actions:", LabelPosition.TOP)
                             .onIsModified { enabledCodeActionsTablePanel.onModified(rubyLspSettings.enabledCodeActions) }
                             .onApply { enabledCodeActionsTablePanel.onApply(rubyLspSettings.enabledCodeActions) }
-                            .onReset { enabledCodeActionsTablePanel.onReset(RUBY_LSP_DEFAULT_CODE_ACTIONS.toMutableSet()) }
+                            .onReset { enabledCodeActionsTablePanel.onReset(rubyLspSettings.enabledCodeActions) }
                     }
                 }
 

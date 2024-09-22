@@ -12,9 +12,13 @@
 
 ### Fixed
 
-- Fixed resetting of features and code actions
-
 ### Security
+
+## [0.0.8] - 2024-09-22
+
+### Fixed
+
+- Fixed resetting of features and code actions
 
 ## [0.0.7] - 2024-09-03
 
@@ -83,7 +87,8 @@
 
 - Initial scaffold created from [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template)
 
-[[Unreleased]]: https://github.com/vitallium/intellij-plugin-ruby-lsp/compare/v0.0.7...HEAD
+[[Unreleased]]: https://github.com/vitallium/intellij-plugin-ruby-lsp/compare/v0.0.8...HEAD
+[0.0.8]: https://github.com/vitallium/intellij-plugin-ruby-lsp/compare/v0.0.7...v0.0.8
 [0.0.7]: https://github.com/vitallium/intellij-plugin-ruby-lsp/compare/v0.0.6...v0.0.7
 [0.0.6]: https://github.com/vitallium/intellij-plugin-ruby-lsp/compare/v0.0.5...v0.0.6
 [0.0.5]: https://github.com/vitallium/intellij-plugin-ruby-lsp/compare/v0.0.4...v0.0.5

@@ -4,6 +4,8 @@
 
 ### Added
 
+- Support EAP versions.
+
 ### Changed
 
 ### Deprecated

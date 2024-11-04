@@ -4,8 +4,6 @@
 
 ### Added
 
-- Support EAP versions.
-
 ### Changed
 
 ### Deprecated
@@ -15,6 +13,12 @@
 ### Fixed
 
 ### Security
+
+## [0.0.9] - 2024-11-04
+
+### Added
+
+- Support EAP versions.
 
 ## [0.0.8] - 2024-09-22
 
@@ -89,7 +93,8 @@
 
 - Initial scaffold created from [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template)
 
-[[Unreleased]]: https://github.com/vitallium/intellij-plugin-ruby-lsp/compare/v0.0.8...HEAD
+[[Unreleased]]: https://github.com/vitallium/intellij-plugin-ruby-lsp/compare/v0.0.9...HEAD
+[0.0.9]: https://github.com/vitallium/intellij-plugin-ruby-lsp/compare/v0.0.8...v0.0.9
 [0.0.8]: https://github.com/vitallium/intellij-plugin-ruby-lsp/compare/v0.0.7...v0.0.8
 [0.0.7]: https://github.com/vitallium/intellij-plugin-ruby-lsp/compare/v0.0.6...v0.0.7
 [0.0.6]: https://github.com/vitallium/intellij-plugin-ruby-lsp/compare/v0.0.5...v0.0.6

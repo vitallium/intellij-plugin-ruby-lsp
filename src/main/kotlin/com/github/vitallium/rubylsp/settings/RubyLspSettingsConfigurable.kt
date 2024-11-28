@@ -1,9 +1,7 @@
 package com.github.vitallium.rubylsp.settings
 
 import com.github.vitallium.rubylsp.RubyLspBundle
-import com.github.vitallium.rubylsp.services.RubyLspServerService
 import com.intellij.icons.AllIcons
-import com.intellij.openapi.components.service
 import com.intellij.openapi.options.BoundSearchableConfigurable
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.ui.ComboBox
@@ -104,7 +102,7 @@ class RubyLspSettingsConfigurable(private val project: Project) : BoundSearchabl
                     }
                 }
             }.enabledIf(enableRubyLspCheckBox.component.selected)
-        }.apply { project.service<RubyLspServerService>().restartServer() }
+        }
     }
 
     private fun isStandardOrRubocopFormatterSelected(selectedFormatter: RubyLspSettingsFormatter): Boolean {

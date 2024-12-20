@@ -14,6 +14,8 @@
 
 ### Fixed
 
+- If experimental features are enabled, add `addon_detection` capability to the `initialization_options`.
+
 ### Security
 
 ## [0.0.9] - 2024-11-04

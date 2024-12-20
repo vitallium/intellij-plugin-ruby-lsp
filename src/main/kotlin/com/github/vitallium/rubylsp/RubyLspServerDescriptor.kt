@@ -71,7 +71,14 @@ internal class RubyLspServerDescriptor(
     override val lspHoverSupport = rubyLspSettings.enabledFeatures.contains("hover")
 
     private fun prepareInitializationOptions(): JsonElement? {
-        return Gson().toJsonTree(rubyLspSettings)
+        val initOptions = Gson().toJsonTree(rubyLspSettings)
+
+        if (rubyLspSettings.experimentalFeaturesEnabled) {
+            val experimentalOptions = Gson().toJsonTree(mapOf("addon_detection" to true))
+            initOptions.asJsonObject.add("experimental", experimentalOptions)
+        }
+
+        return initOptions
     }
 
     companion object {

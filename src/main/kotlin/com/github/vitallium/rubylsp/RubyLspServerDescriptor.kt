@@ -91,10 +91,6 @@ internal class RubyLspServerDescriptor(
 
             val gemScriptArgsBuilder = mutableListOf("")
 
-            if (lspSettings.useExperimentalVersion) {
-                gemScriptArgsBuilder.add("--experimental")
-            }
-
             val moduleForRunningLsp = if (lspSettings.useBundler) module else null
 
             return RubyGemExecutionContext.tryCreate(

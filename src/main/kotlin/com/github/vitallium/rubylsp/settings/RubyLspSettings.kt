@@ -42,9 +42,6 @@ data class RubyLspSettings(
     var enableExclusiveFormatting: Boolean = false,
 
     @Transient
-    var useExperimentalVersion: Boolean = false,
-
-    @Transient
     var useBundler: Boolean = false,
 
     var formatter: RubyLspSettingsFormatter = RubyLspSettingsFormatter.AUTO,

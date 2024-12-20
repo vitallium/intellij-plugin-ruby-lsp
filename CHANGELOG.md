@@ -10,6 +10,8 @@
 
 ### Removed
 
+- Running experimental versions of `ruby-lsp` was removed.
+
 ### Fixed
 
 ### Security

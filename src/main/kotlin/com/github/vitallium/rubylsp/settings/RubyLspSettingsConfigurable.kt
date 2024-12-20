@@ -30,12 +30,6 @@ class RubyLspSettingsConfigurable(private val project: Project) : BoundSearchabl
             }
 
             indent {
-                row {
-                    checkBox("Use pre-release versions of the Ruby LSP")
-                        .enabledIf(enableRubyLspCheckBox.selected)
-                        .bindSelected(rubyLspSettings::useExperimentalVersion)
-                }
-
                 row("Formatter") {
                     comboBox(RubyLspSettingsFormatter.entries)
                         .bindItem(rubyLspSettings::formatter.toNullableProperty())

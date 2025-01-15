@@ -4,6 +4,8 @@
 
 ### Added
 
+- Automatically ignore the `.ruby-lsp` directory
+
 ### Changed
 
 ### Deprecated

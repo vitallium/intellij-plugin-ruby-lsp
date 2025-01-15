@@ -23,6 +23,10 @@
     <!-- Misc -->
     <notificationGroup id="RubyLsp" displayType="BALLOON"/>
 
+    <directoryIndexExcludePolicy
+      implementation="com.github.vitallium.rubylsp.RubyLspDirectoryIndexExcludePolicy"
+    />
+
     <!-- Settings -->
     <projectConfigurable groupId="language" id="rubyLsp"
                          bundle="messages.RubyLspBundle" key="settings.display.name"

@@ -4,11 +4,21 @@
 
 ### Added
 
-- Automatically ignore the `.ruby-lsp` directory
-
 ### Changed
 
 ### Deprecated
+
+### Removed
+
+### Fixed
+
+### Security
+
+## [0.1.0] - 2025-01-15
+
+### Added
+
+- Automatically ignore the `.ruby-lsp` directory
 
 ### Removed
 
@@ -17,8 +27,6 @@
 ### Fixed
 
 - If experimental features are enabled, add `addon_detection` capability to the `initialization_options`.
-
-### Security
 
 ## [0.0.9] - 2024-11-04
 
@@ -99,7 +107,8 @@
 
 - Initial scaffold created from [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template)
 
-[[Unreleased]]: https://github.com/vitallium/intellij-plugin-ruby-lsp/compare/v0.0.9...HEAD
+[[Unreleased]]: https://github.com/vitallium/intellij-plugin-ruby-lsp/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/vitallium/intellij-plugin-ruby-lsp/compare/v0.0.9...v0.1.0
 [0.0.9]: https://github.com/vitallium/intellij-plugin-ruby-lsp/compare/v0.0.8...v0.0.9
 [0.0.8]: https://github.com/vitallium/intellij-plugin-ruby-lsp/compare/v0.0.7...v0.0.8
 [0.0.7]: https://github.com/vitallium/intellij-plugin-ruby-lsp/compare/v0.0.6...v0.0.7

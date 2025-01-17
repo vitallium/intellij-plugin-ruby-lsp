@@ -4,6 +4,8 @@
 
 ### Added
 
+- Support for `251.*` EAP builds
+
 ### Changed
 
 ### Deprecated

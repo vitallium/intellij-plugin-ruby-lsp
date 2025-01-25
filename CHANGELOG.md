@@ -4,9 +4,6 @@
 
 ### Added
 
-- Support for `251.*` EAP builds
-- Add user-friendly names to the formatter options
-
 ### Changed
 
 ### Deprecated
@@ -16,6 +13,13 @@
 ### Fixed
 
 ### Security
+
+## [0.1.1] - 2025-01-25
+
+### Added
+
+- Support for `251.*` EAP builds
+- Add user-friendly names to the formatter options
 
 ## [0.1.0] - 2025-01-15
 
@@ -110,7 +114,8 @@
 
 - Initial scaffold created from [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template)
 
-[[Unreleased]]: https://github.com/vitallium/intellij-plugin-ruby-lsp/compare/v0.1.0...HEAD
+[[Unreleased]]: https://github.com/vitallium/intellij-plugin-ruby-lsp/compare/v0.1.1...HEAD
+[0.1.1]: https://github.com/vitallium/intellij-plugin-ruby-lsp/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/vitallium/intellij-plugin-ruby-lsp/compare/v0.0.9...v0.1.0
 [0.0.9]: https://github.com/vitallium/intellij-plugin-ruby-lsp/compare/v0.0.8...v0.0.9
 [0.0.8]: https://github.com/vitallium/intellij-plugin-ruby-lsp/compare/v0.0.7...v0.0.8

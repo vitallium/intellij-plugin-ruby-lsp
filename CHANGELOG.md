@@ -5,6 +5,7 @@
 ### Added
 
 - Support for `251.*` EAP builds
+- Add user-friendly names to the formatter options
 
 ### Changed
 

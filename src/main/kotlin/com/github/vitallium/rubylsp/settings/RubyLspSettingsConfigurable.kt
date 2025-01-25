@@ -8,6 +8,7 @@ import com.intellij.openapi.options.BoundSearchableConfigurable
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.ui.ComboBox
 import com.intellij.openapi.ui.DialogPanel
+import com.intellij.ui.SimpleListCellRenderer
 import com.intellij.ui.components.JBCheckBox
 import com.intellij.ui.components.JBLabel
 import com.intellij.ui.dsl.builder.*
@@ -34,6 +35,7 @@ class RubyLspSettingsConfigurable(private val project: Project) : BoundSearchabl
                     comboBox(RubyLspSettingsFormatter.entries)
                         .bindItem(rubyLspSettings::formatter.toNullableProperty())
                         .applyToComponent {
+                            renderer = SimpleListCellRenderer.create { label, formatter, _ -> label.text = formatter.getDisplayName() }
                             addActionListener { event ->
                                 val selectedFormatter =
                                     (event.source as ComboBox<*>).selectedItem as RubyLspSettingsFormatter

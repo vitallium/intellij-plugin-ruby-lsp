@@ -52,20 +52,30 @@ data class RubyLspSettings(
 
 enum class RubyLspSettingsFormatter {
     @SerializedName("auto")
+    @DisplayName("Automatic")
     AUTO,
 
     @SerializedName("rubocop")
+    @DisplayName("RuboCop")
     RUBOCOP,
 
     @SerializedName("syntax_tree")
+    @DisplayName("Syntax Tree")
     SYNTAX_TREE,
 
     @SerializedName("standard")
+    @DisplayName("Standard")
     STANDARD,
 
     @SerializedName("rubyfmt")
+    @DisplayName("Rubyfmt")
     RUBYFMT,
 
     @SerializedName("none")
+    @DisplayName("None")
     NONE;
+
+    fun getDisplayName(): String {
+        return this.javaClass.getField(this.name).getAnnotation(DisplayName::class.java)?.name ?: this.name
+    }
 }

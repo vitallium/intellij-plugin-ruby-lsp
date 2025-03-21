@@ -6,6 +6,8 @@
 
 ### Changed
 
+- Updated `gradle` to v8.13
+
 ### Deprecated
 
 ### Removed

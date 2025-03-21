@@ -39,7 +39,6 @@ dependencies {
     plugins(
       providers.gradleProperty("platformPlugins").map { it.split(',').map(String::trim).filter(String::isNotEmpty) })
 
-    instrumentationTools()
     pluginVerifier()
     zipSigner()
   }

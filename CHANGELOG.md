@@ -7,6 +7,7 @@
 ### Changed
 
 - Updated `gradle` to v8.13
+- Update platform and Ruby plugin versions for 2025.1
 
 ### Deprecated
 

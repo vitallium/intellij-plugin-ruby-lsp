@@ -6,7 +6,7 @@
 
 ### Changed
 
-- Updated `gradle` to v8.13
+- Update Gradle to 8.14
 - Update platform and Ruby plugin versions for 2025.1
 - Change since/until build to `242-252.*` (2024.2-2025.2.*)
 - Change JVM version to `21`

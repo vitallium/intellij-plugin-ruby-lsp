@@ -15,6 +15,8 @@
 
 ### Removed
 
+- Remove `pluginUntilBuild` obsolete property
+
 ### Fixed
 
 ### Security

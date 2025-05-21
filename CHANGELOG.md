@@ -6,7 +6,7 @@
 
 ### Changed
 
-- Updated `gradle` to v8.13
+- Update `gradle` to v8.14
 
 ### Deprecated
 

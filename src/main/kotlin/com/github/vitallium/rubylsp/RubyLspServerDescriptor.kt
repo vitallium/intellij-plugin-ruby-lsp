@@ -96,8 +96,6 @@ internal class RubyLspServerDescriptor(
                 return null
             }
 
-            val gemScriptArgsBuilder = mutableListOf("")
-
             val moduleForRunningLsp = if (lspSettings.useBundler) module else null
 
             return RubyGemExecutionContext.tryCreate(
@@ -107,7 +105,6 @@ internal class RubyLspServerDescriptor(
             )
                 ?.withWorkingDir(gemfile.parent)
                 ?.withGemScriptName(GEM_SCRIPT_NAME)
-                ?.withArguments(gemScriptArgsBuilder)
         }
 
         fun tryCreate(project: Project, file: VirtualFile): RubyLspServerDescriptor? {

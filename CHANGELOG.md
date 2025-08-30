@@ -10,6 +10,8 @@
 
 ### Removed
 
+- Remove fixed plugin verifier version
+
 ### Fixed
 
 ### Security

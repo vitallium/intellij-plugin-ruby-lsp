@@ -39,8 +39,7 @@ dependencies {
     plugins(
       providers.gradleProperty("platformPlugins").map { it.split(',').map(String::trim).filter(String::isNotEmpty) })
 
-    // NOTE(vslobodin): JB messed up their plugin verifier recently, and it fails in CI for an unknown reason.
-    pluginVerifier("1.384")
+    pluginVerifier()
     zipSigner()
   }
 }

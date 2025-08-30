@@ -4,8 +4,6 @@
 
 ### Added
 
-- Support for `252.*` builds
-
 ### Changed
 
 ### Deprecated
@@ -15,6 +13,12 @@
 ### Fixed
 
 ### Security
+
+## [0.1.3] - 2025-08-30
+
+### Added
+
+- Support for `252.*` builds
 
 ## [0.1.2] - 2025-08-24
 
@@ -124,7 +128,8 @@
 
 - Initial scaffold created from [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template)
 
-[[Unreleased]]: https://github.com/vitallium/intellij-plugin-ruby-lsp/compare/v0.1.2...HEAD
+[[Unreleased]]: https://github.com/vitallium/intellij-plugin-ruby-lsp/compare/v0.1.3...HEAD
+[0.1.3]: https://github.com/vitallium/intellij-plugin-ruby-lsp/compare/v0.1.2...v0.1.3
 [0.1.2]: https://github.com/vitallium/intellij-plugin-ruby-lsp/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/vitallium/intellij-plugin-ruby-lsp/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/vitallium/intellij-plugin-ruby-lsp/compare/v0.0.9...v0.1.0

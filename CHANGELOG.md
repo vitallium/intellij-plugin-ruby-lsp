@@ -7,6 +7,7 @@
 ### Changed
 
 - Change since build to `243` (2024.3)
+- Update Ruby plugin version to 243.15521.24
 
 ### Deprecated
 

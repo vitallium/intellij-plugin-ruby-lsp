@@ -4,6 +4,8 @@
 
 ### Added
 
+- Support for `252.*` builds
+
 ### Changed
 
 ### Deprecated

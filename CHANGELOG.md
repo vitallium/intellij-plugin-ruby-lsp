@@ -6,8 +6,8 @@
 
 ### Changed
 
-- Change since build to `243` (2024.3)
-- Update Ruby plugin version to 243.15521.24
+- Change since build to `251` (2025.1)
+- Update Ruby plugin version to `251.14649.49`
 - Upgrade Gradle Wrapper to `9.0.0`
 - Remove obsolete `pluginSinceBuild` property
 

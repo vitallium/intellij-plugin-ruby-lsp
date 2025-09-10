@@ -9,6 +9,8 @@ import com.intellij.platform.lsp.api.LspServerManager
 @Suppress("UnstableApiUsage")
 class RubyLspServerService(private val project: Project) {
     fun restartServer() {
+        if (project.isDefault) return
+
         LspServerManager.getInstance(project)
             .stopAndRestartIfNeeded(RubyLspServerSupportProvider::class.java)
     }

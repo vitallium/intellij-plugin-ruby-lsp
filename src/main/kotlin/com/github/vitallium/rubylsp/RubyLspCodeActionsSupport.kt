@@ -5,7 +5,6 @@ import com.intellij.platform.lsp.api.LspServer
 import com.intellij.platform.lsp.api.customization.LspCodeActionsSupport
 import org.eclipse.lsp4j.CodeAction
 
-@Suppress("UnstableApiUsage")
 internal class RubyLspCodeActionsSupport(rubyLspSettings: RubyLspSettings) : LspCodeActionsSupport() {
     private val enabledCodeActions = rubyLspSettings.enabledCodeActions
 

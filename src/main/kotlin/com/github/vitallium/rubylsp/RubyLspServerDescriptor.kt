@@ -19,7 +19,6 @@ import org.jetbrains.plugins.ruby.gem.util.BundlerUtil
 import org.jetbrains.plugins.ruby.ruby.lang.RubyFileType
 import org.jetbrains.plugins.ruby.ruby.sdk.RubySdkUtil
 
-@Suppress("UnstableApiUsage")
 internal class RubyLspServerDescriptor(
     private val rubyLspSettings: RubyLspSettings,
     private val rubyExecutionContext: RubyGemExecutionContext,

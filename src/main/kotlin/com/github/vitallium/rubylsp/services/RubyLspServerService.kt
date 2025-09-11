@@ -6,7 +6,6 @@ import com.intellij.openapi.project.Project
 import com.intellij.platform.lsp.api.LspServerManager
 
 @Service(Service.Level.PROJECT)
-@Suppress("UnstableApiUsage")
 class RubyLspServerService(private val project: Project) {
     fun restartServer() {
         if (project.isDefault) return

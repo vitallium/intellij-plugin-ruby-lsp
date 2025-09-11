@@ -8,7 +8,6 @@ import com.intellij.platform.lsp.api.LspServerSupportProvider
 import com.intellij.platform.lsp.api.lsWidget.LspServerWidgetItem
 import org.jetbrains.plugins.ruby.ruby.lang.RubyFileType
 
-@Suppress("UnstableApiUsage")
 class RubyLspServerSupportProvider : LspServerSupportProvider {
     override fun fileOpened(
         project: Project,

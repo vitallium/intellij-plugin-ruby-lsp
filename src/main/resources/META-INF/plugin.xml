@@ -11,7 +11,7 @@
   <resource-bundle>messages.RubyLspBundle</resource-bundle>
 
   <depends>com.intellij.modules.ultimate</depends>
-  <depends>com.intellij.modules.ruby</depends>
+  <depends>org.jetbrains.plugins.ruby</depends>
 
   <!-- Extension points defined by the plugin.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->

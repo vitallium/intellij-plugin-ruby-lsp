@@ -15,6 +15,7 @@ class RubyLspServerSupportProvider : LspServerSupportProvider {
         file: VirtualFile,
         serverStarter: LspServerSupportProvider.LspServerStarter
     ) {
+        if (project.isDefault) return
         if (file.fileType != RubyFileType.RUBY) return
 
         val rubyLspServerDescriptor = RubyLspServerDescriptor.tryCreate(project, file) ?: return

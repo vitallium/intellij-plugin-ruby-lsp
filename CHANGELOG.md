@@ -6,20 +6,26 @@
 
 ### Changed
 
+### Deprecated
+
+### Removed
+
+### Fixed
+
+### Security
+
+## [0.2.3] - 2025-09-17
+
+### Changed
+
 - Change since build to `251` (2025.1)
 - Update Ruby plugin version to `251.23774.435`
 - Upgrade Gradle Wrapper to `9.0.0`
 - Remove obsolete `pluginSinceBuild` property
 
-### Deprecated
-
 ### Removed
 
 - Remove fixed plugin verifier version
-
-### Fixed
-
-### Security
 
 ## [0.1.3] - 2025-08-30
 
@@ -135,7 +141,8 @@
 
 - Initial scaffold created from [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template)
 
-[[Unreleased]]: https://github.com/vitallium/intellij-plugin-ruby-lsp/compare/v0.1.3...HEAD
+[[Unreleased]]: https://github.com/vitallium/intellij-plugin-ruby-lsp/compare/v0.2.3...HEAD
+[0.2.3]: https://github.com/vitallium/intellij-plugin-ruby-lsp/compare/v0.1.3...v0.2.3
 [0.1.3]: https://github.com/vitallium/intellij-plugin-ruby-lsp/compare/v0.1.2...v0.1.3
 [0.1.2]: https://github.com/vitallium/intellij-plugin-ruby-lsp/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/vitallium/intellij-plugin-ruby-lsp/compare/v0.1.0...v0.1.1

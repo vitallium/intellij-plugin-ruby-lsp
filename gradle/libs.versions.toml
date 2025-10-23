@@ -2,7 +2,7 @@
 # libraries
 
 # plugins
-kotlin = "2.2.20"
+kotlin = "2.2.21"
 changelog = "2.4.0"
 intelliJPlatform = "2.10.0"
 qodana = "2025.2.1"

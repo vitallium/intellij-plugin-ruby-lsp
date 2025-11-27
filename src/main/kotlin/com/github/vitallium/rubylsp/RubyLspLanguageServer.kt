@@ -25,7 +25,7 @@ class RubyLspLanguageServer(project: Project) : OSProcessStreamConnectionProvide
         val gemExecutionContext = createGemExecutionContext(project, settings)
             ?: throw CannotStartProcessException("Ruby LSP gem is not available for this project")
 
-        try {
+        runCatching {
             val commands = gemExecutionContext.scriptExecutionCommands
                 ?: throw CannotStartProcessException("Failed to build Ruby LSP command line")
             val commandLine = GeneralCommandLine(*commands)
@@ -34,9 +34,14 @@ class RubyLspLanguageServer(project: Project) : OSProcessStreamConnectionProvide
             gemExecutionContext.workingDirPath?.let(commandLine::withWorkDirectory)
 
             setCommandLine(commandLine)
-        } catch (exception: ExecutionException) {
-            logger.error("Failed to build Ruby LSP command line", exception)
-            throw CannotStartProcessException(exception)
+        }.onFailure { exception ->
+            when (exception) {
+                is ExecutionException -> {
+                    logger.error("Failed to build Ruby LSP command line", exception)
+                    throw CannotStartProcessException(exception)
+                }
+                else -> throw exception
+            }
         }
     }
 

@@ -39,6 +39,9 @@ dependencies {
     plugins(
       providers.gradleProperty("platformPlugins").map { it.split(',').map(String::trim).filter(String::isNotEmpty) })
 
+    val lsp4ij = libs.plugins.lsp4ij.get()
+    plugin("${lsp4ij.pluginId}:${lsp4ij.version.requiredVersion}")
+
     pluginVerifier()
     zipSigner()
   }
@@ -156,7 +159,6 @@ intellijPlatformTesting {
             "-Djb.consents.confirmation.enabled=false",
             "-Didea.trust.all.projects=true",
             "-Dide.show.tips.on.startup.default.value=false",
-            "-Dide.experimental.ui=true",
           )
         }
       }

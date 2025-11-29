@@ -7,6 +7,7 @@ changelog = "2.4.0"
 intelliJPlatform = "2.10.5"
 qodana = "2025.2.2"
 kover = "0.9.3"
+lsp4ij = "0.18.0"
 
 [plugins]
 changelog = { id = "org.jetbrains.changelog", version.ref = "changelog" }
@@ -14,3 +15,4 @@ intelliJPlatform = { id = "org.jetbrains.intellij.platform", version.ref = "inte
 kotlin = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kover = { id = "org.jetbrains.kotlinx.kover", version.ref = "kover" }
 qodana = { id = "org.jetbrains.qodana", version.ref = "qodana" }
+lsp4ij = { id = "com.redhat.devtools.lsp4ij", version.ref = "lsp4ij" }

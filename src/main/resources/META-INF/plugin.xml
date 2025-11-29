@@ -10,15 +10,24 @@
       ]]></description>
   <resource-bundle>messages.RubyLspBundle</resource-bundle>
 
-  <depends>com.intellij.modules.ultimate</depends>
+  <depends>com.intellij.modules.lang</depends>
   <depends>org.jetbrains.plugins.ruby</depends>
+  <depends>com.redhat.devtools.lsp4ij</depends>
 
-  <!-- Extension points defined by the plugin.
-         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+  <extensions defaultExtensionNs="com.redhat.devtools.lsp4ij">
+    <server factoryClass="com.github.vitallium.rubylsp.RubyLspLanguageServerFactory"
+            id="ruby-lsp"
+            name="Ruby LSP Language Server">
+      <description><![CDATA[
+            <h1>Ruby LSP</h1>
+            ]]>
+      </description>
+    </server>
+    <languageMapping language="ruby" languageId="ruby" serverId="ruby-lsp" />
+  </extensions>
+
   <extensions defaultExtensionNs="com.intellij">
     <!-- LSP -->
-    <!--suppress PluginXmlValidity -->
-    <platform.lsp.serverSupportProvider implementation="com.github.vitallium.rubylsp.RubyLspServerSupportProvider"/>
 
     <!-- Misc -->
     <notificationGroup id="RubyLsp" displayType="BALLOON"/>
@@ -31,6 +40,6 @@
     <projectConfigurable groupId="language" id="rubyLsp"
                          bundle="messages.RubyLspBundle" key="settings.display.name"
                          nonDefaultProject="false"
-                         instance="com.github.vitallium.rubylsp.settings.RubyLspSettingsConfigurable"/>/>
+                         instance="com.github.vitallium.rubylsp.settings.RubyLspSettingsConfigurable"/>
   </extensions>
 </idea-plugin>

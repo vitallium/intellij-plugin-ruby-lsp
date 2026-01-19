@@ -6,9 +6,9 @@
 
 ### Changed
 
-- Update JVM to `jbr-21`
+- Migrate to `lsp4ij`
 - Update `lsp4ij` version to v0.19.0
-- Completely migrate to `lsp4ij`
+- Update JVM to `jbr-21`
 
 ### Deprecated
 

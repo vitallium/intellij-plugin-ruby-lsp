@@ -8,6 +8,7 @@
 
 - Update JVM to `jbr-21`
 - Update `lsp4ij` version to v0.19.0
+- Completely migrate to `lsp4ij`
 
 ### Deprecated
 

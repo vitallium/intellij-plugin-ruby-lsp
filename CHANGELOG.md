@@ -6,6 +6,8 @@
 
 ### Changed
 
+- Update JVM to `jbr-21`
+
 ### Deprecated
 
 ### Removed

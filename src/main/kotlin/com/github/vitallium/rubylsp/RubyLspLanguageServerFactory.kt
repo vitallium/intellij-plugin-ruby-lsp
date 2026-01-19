@@ -19,7 +19,6 @@ class RubyLspLanguageServerFactory : LanguageServerFactory, LanguageServerEnable
         return RubyLspLanguageServer(project)
     }
 
-    @Suppress("UnstableApiUsage")
     override fun createClientFeatures(): LSPClientFeatures = RubyLspClientFeatures()
 
     override fun isEnabled(project: Project): Boolean {
@@ -34,7 +33,6 @@ class RubyLspLanguageServerFactory : LanguageServerFactory, LanguageServerEnable
     }
 }
 
-@Suppress("UnstableApiUsage")
 private class RubyLspClientFeatures : LSPClientFeatures() {
     private val logger = thisLogger()
     private val gson = Gson()

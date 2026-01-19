@@ -7,7 +7,7 @@ changelog = "2.5.0"
 intelliJPlatform = "2.10.5"
 qodana = "2025.2.4"
 kover = "0.9.4"
-lsp4ij = "0.18.0"
+lsp4ij = "0.19.0"
 
 [plugins]
 changelog = { id = "org.jetbrains.changelog", version.ref = "changelog" }

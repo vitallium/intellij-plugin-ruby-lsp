@@ -4,6 +4,9 @@
 
 ### Added
 
+- Added `Run Test` command for code insights
+- Added `Run Test in Terminal` command for code insights
+
 ### Changed
 
 - Migrate to `lsp4ij`

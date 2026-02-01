@@ -42,4 +42,19 @@
                          nonDefaultProject="false"
                          instance="com.github.vitallium.rubylsp.settings.RubyLspSettingsConfigurable"/>
   </extensions>
+
+  <!-- Ruby LSP Commands -->
+  <actions>
+    <action id="rubyLsp.runTestInTerminal"
+            class="com.github.vitallium.rubylsp.commands.RubyLspRunTestInTerminalCommand"
+            text="Run Test in Terminal"
+            description="Run the current Ruby test in the integrated terminal">
+    </action>
+
+    <action id="rubyLsp.runTest"
+            class="com.github.vitallium.rubylsp.commands.RubyLspRunTestCommand"
+            text="Run Test"
+            description="Run the current Ruby test">
+    </action>
+  </actions>
 </idea-plugin>

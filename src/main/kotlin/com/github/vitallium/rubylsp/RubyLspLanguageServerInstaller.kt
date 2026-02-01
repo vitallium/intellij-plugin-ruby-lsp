@@ -2,7 +2,7 @@ package com.github.vitallium.rubylsp
 
 import com.github.vitallium.rubylsp.settings.RubyLspSettingsStateComponent
 import com.intellij.execution.ExecutionException
-import com.intellij.openapi.application.WriteIntentReadAction
+import com.intellij.openapi.application.ReadAction
 import com.intellij.openapi.module.ModuleManager
 import com.intellij.openapi.progress.ProgressIndicator
 import com.intellij.openapi.projectRoots.Sdk
@@ -36,7 +36,7 @@ class RubyLspLanguageServerInstaller : LanguageServerInstallerBase() {
 
         val settings = RubyLspSettingsStateComponent.getInstance(currentProject).lspSettings
 
-        val moduleWithGemfile = WriteIntentReadAction.compute<Pair<com.intellij.openapi.module.Module, VirtualFile>?, RuntimeException> {
+        val moduleWithGemfile = ReadAction.compute<Pair<com.intellij.openapi.module.Module, VirtualFile>?, RuntimeException> {
             ModuleManager.getInstance(currentProject).modules.firstNotNullOfOrNull { module ->
                 BundlerUtil.getGemfile(module)?.let { gemfile -> module to gemfile }
             }
@@ -44,7 +44,7 @@ class RubyLspLanguageServerInstaller : LanguageServerInstallerBase() {
 
         val (module, gemfile) = moduleWithGemfile
 
-        val sdk = WriteIntentReadAction.compute<Sdk?, RuntimeException> {
+        val sdk = ReadAction.compute<Sdk?, RuntimeException> {
             RubySdkUtil.findRubySdk(currentProject)
         } ?: throw RuntimeException("Ruby SDK is not configured")
 

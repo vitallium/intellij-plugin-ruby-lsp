@@ -4,7 +4,7 @@ import com.github.vitallium.rubylsp.settings.RubyLspSettings
 import com.github.vitallium.rubylsp.settings.RubyLspSettingsStateComponent
 import com.intellij.execution.ExecutionException
 import com.intellij.execution.configurations.GeneralCommandLine
-import com.intellij.openapi.application.WriteIntentReadAction
+import com.intellij.openapi.application.ReadAction
 import com.intellij.openapi.diagnostic.Logger
 import com.intellij.openapi.module.ModuleManager
 import com.intellij.openapi.project.Project
@@ -52,7 +52,7 @@ class RubyLspLanguageServer(project: Project) : OSProcessStreamConnectionProvide
             project: Project,
             lspSettings: RubyLspSettings
         ): RubyGemExecutionContext? {
-            return WriteIntentReadAction.compute<RubyGemExecutionContext?, RuntimeException> {
+            return ReadAction.compute<RubyGemExecutionContext?, RuntimeException> {
                 val moduleWithGemfile = ModuleManager.getInstance(project).modules.firstNotNullOfOrNull { module ->
                     BundlerUtil.getGemfile(module)?.let { gemfile -> module to gemfile }
                 } ?: return@compute null

@@ -10,7 +10,7 @@
 ### Changed
 
 - Migrate to `lsp4ij`
-- Update `lsp4ij` version to v0.19.0
+- Update `lsp4ij` version to v0.19.1
 - Update JVM to `jbr-21`
 - Update `gradle` to v9.3.1
 

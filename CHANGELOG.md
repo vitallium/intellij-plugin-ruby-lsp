@@ -6,6 +6,8 @@
 
 ### Changed
 
+- Update `lsp4ij` version to v0.19.2
+
 ### Deprecated
 
 ### Removed

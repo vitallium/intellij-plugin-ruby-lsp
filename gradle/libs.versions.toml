@@ -6,7 +6,7 @@ kotlin = "2.3.20"
 changelog = "2.5.0"
 intelliJPlatform = "2.13.1"
 qodana = "2025.3.2"
-kover = "0.9.7"
+kover = "0.9.8"
 lsp4ij = "0.19.2"
 
 [plugins]

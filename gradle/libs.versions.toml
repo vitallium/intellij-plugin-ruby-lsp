@@ -4,7 +4,7 @@
 # plugins
 kotlin = "2.3.21"
 changelog = "2.5.0"
-intelliJPlatform = "2.14.0"
+intelliJPlatform = "2.16.0"
 qodana = "2026.1.0"
 kover = "0.9.8"
 lsp4ij = "0.19.3"

@@ -7,8 +7,8 @@
 ### Changed
 
 - Update `lsp4ij` version to v0.19.3
-- Bump `gradle-wrapper` from 9.3.1 to 9.4.1
-- Bump `org.jetbrains.kotlin.jvm` from 2.3.0 to 2.3.20
+- Bump `gradle-wrapper` from 9.3.1 to 9.5.0
+- Bump `org.jetbrains.kotlin.jvm` from 2.3.0 to 2.3.21
 - Bump `org.jetbrains.kotlinx.kover` from 0.9.4 to 0.9.8
 - Bump `org.jetbrains.intellij.platform` from 2.11.0 to 2.13.1
 - Bump `org.jetbrains.qodana` from 2025.3.1 to 2025.3.2

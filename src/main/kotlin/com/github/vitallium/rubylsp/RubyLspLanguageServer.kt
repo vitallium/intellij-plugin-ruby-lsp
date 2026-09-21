@@ -63,16 +63,14 @@ class RubyLspLanguageServer(project: Project) : OSProcessStreamConnectionProvide
                     return@compute null
                 }
 
-                val sdk = RubySdkUtil.findRubySdk(project) ?: return@compute null
+                val sdk = RubySdkUtil.findRubySdk(module, project) ?: return@compute null
 
-                RubyGemExecutionContext.tryCreate(
-                    sdk,
-                    module,
-                    GEM_SCRIPT_NAME
-                )
-                    ?.withWorkingDirPath(gemfile.parent.path)
-                    ?.withAddBundleExec(lspSettings.useBundler)
-                    ?.withGemScriptName(GEM_SCRIPT_NAME)
+                RubyGemExecutionContext.create(sdk, GEM_SCRIPT_NAME)
+                    .withModule(module)
+                    .withWorkingDirPath(gemfile.parent.path)
+                    .withAddBundleExec(lspSettings.useBundler)
+                    .withGemScriptName(GEM_SCRIPT_NAME)
+                    .takeIf { it.scriptPath != null }
             }
         }
     }

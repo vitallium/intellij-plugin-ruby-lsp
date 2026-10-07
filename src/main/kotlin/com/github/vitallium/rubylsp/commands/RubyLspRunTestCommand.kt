@@ -69,7 +69,7 @@ class RubyLspRunTestCommand : LSPCommandAction() {
         val context = ConfigurationContext(element)
         val settings = context.configuration
             ?: context.createConfigurationsFromContext()
-                ?.sortedWith(ConfigurationFromContext.COMPARATOR)
+                ?.sortedBy { it.configuration.name }
                 ?.firstOrNull()
                 ?.configurationSettings
 
